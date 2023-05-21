@@ -23,6 +23,10 @@ In this tutorial I will be breaking down the components of a regular expression 
 
 ### Anchors
 
+`/^`#?([a-f0-9]{6}|[a-f0-9]{3})`$/`
+
+The first component that we will be looking at are the Anchors. Looking at the regex code listed above, the highlighted portions are the Anchors. Anchors are used at the start and end of a string or expression. In this case, `/^` would signify the beginning and `$/` would signify the end of our expression.
+
 ### Quantifiers
 
 ### Grouping Constructs
