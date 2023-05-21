@@ -41,7 +41,7 @@ The {2,6} Qualifier performs a similar function. The regex attempts to match eve
 
 ### Bracket Expressions
 
-/^(`[`a-z0-9_\.-`]`+)@(`[`\da-z\.-`]`+)\.(`[`a-z\.`]``{2,6}`)$/
+/^(`[`a-z0-9_\.-`]`+)@(`[`\da-z\.-`]`+)\.(`[`a-z\.`]` `{2,6}`)$/
 
 Brackets indicate a set of characters to match. Any individual character between the brackets will match, and you can use a hyphen to define a set ([abcd], [a-d]).
 
