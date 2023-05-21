@@ -39,9 +39,13 @@ The two "+" Quantifiers tells our regular expression to attempt to match everyth
 
 The {2,6} Qualifier performs a similar function. The regex attempts to match everything within the Capture Group "()" with a character between 2 and 6 times, as many as possible. It sets the range of matches instead of leaving it unlimited like with the "+" Qualifier. This Qualifier is also Greedy because it will still attempt to match the largest group possible.
 
-### Grouping Constructs
-
 ### Bracket Expressions
+
+/^(`[`a-z0-9_\.-`]`+)@(`[`\da-z\.-`]`+)\.(`[`a-z\.`]``{2,6}`)$/
+
+Brackets indicate a set of characters to match. Any individual character between the brackets will match, and you can use a hyphen to define a set ([abcd], [a-d]).
+
+Curly braces are used to specify an exact amount of things to match. In this case, the regular expression is showing to match between 2 and 6 times {2,6}.
 
 ### Character Classes
 
