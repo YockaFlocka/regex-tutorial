@@ -6,6 +6,8 @@ This Regex (Regular Expression) tutorial is created to help the reader break dow
 
 In this tutorial I will be breaking down the components of a regular expression used to match an email. By using regex, we can make it so the user has to enter a valid email in order to make an accout, sign up for something, etc.
 
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
 ## Table of Contents
 
 - [Anchors](#anchors)
