@@ -41,7 +41,7 @@ The {2,6} Qualifier performs a similar function. The regex attempts to match eve
 
 ### Bracket Expressions
 
-/^(`[`a-z0-9_\.-`]`+)@(`[`\da-z\.-`]`+)\.(`[`a-z\.`]` `{2,6}`)$/
+/^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]` `{2,6}`)$/
 
 Brackets indicate a set of characters to match. Any individual character between the brackets will match, and you can use a hyphen to define a set ([abcd], [a-d]).
 
@@ -58,13 +58,13 @@ Character Classes match a character in the input string to any one character set
 - "\d" serves the same purpose as defining the previous digit range (0-9)
 - "_" and "-" match their respective characters literally
 - "\." matches a period literally
-- "@" and the external "\." match their respective characters literally at certain positions in the input string
-
-### Flags
-
-
+- "@" and the external "\." match their respective characters literally at specific positions in the input string
 
 ### Character Escapes
+
+/^([a-z0-9_`\.`-]+)@([\da-z`\.`-]+)`\.`([a-z`\.`]{2,6})$/
+
+To match a character having special meaning in regex, you need to use an escape sequence prefix with a backslash (\). Example:   \. matches ".",    \+ matches "+"
 
 ## Author
 
