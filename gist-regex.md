@@ -15,8 +15,6 @@ In this tutorial I will be breaking down the components of a regular expression 
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
-- [Flags](#flags)
 - [Character Escapes](#character-escapes)
 
 ## Regex Components
@@ -38,6 +36,14 @@ In the code above, we have two different quantifiers that are highlighted: The "
 The two "+" Quantifiers tells our regular expression to attempt to match everything within the Capture Group "()" with a character between one and unlimited times, as many times as possible. This means the regex will keep matching until either there are no characters to match (a blank string value), the character set that follows the string appears ("@" symbol for Group 1, "." for Group 2), or a character that does not match the string paramaters appears. This is a Greedy match because the Qualifier will attempt to match the largest group of characters possible barring the 3 circumstances above.
 
 The {2,6} Qualifier performs a similar function. The regex attempts to match everything within the Capture Group "()" with a character between 2 and 6 times, as many as possible. It sets the range of matches instead of leaving it unlimited like with the "+" Qualifier. This Qualifier is also Greedy because it will still attempt to match the largest group possible.
+
+### Grouping Constructs
+
+/^`([a-z0-9_\.-]+)`@`([\da-z\.-]+)`\.`([a-z\.]{2,6})`$/
+
+Each Character Class in this regex is housed within a Capture Group marked with parenthesis "()". Text matched by the regex inside of the Capture Group will get placed into a numbered group (an array in JavaScript) where you can access the matching characters with their index number.
+
+The highlighted portions of the regex above show the multiple Capture Groups associated in verifying an email.
 
 ### Bracket Expressions
 
@@ -64,7 +70,7 @@ Character Classes match a character in the input string to any one character set
 
 /^([a-z0-9_`\.`-]+)@([\da-z`\.`-]+)`\.`([a-z`\.`]{2,6})$/
 
-To match a character having special meaning in regex, you need to use an escape sequence prefix with a backslash (\). Example:   \. matches ".",    \+ matches "+"
+To match a character having special meaning in regex, you need to use an escape sequence prefix with a backslash (`\`). Example:   `\.` matches ".",    `\+` matches "+"
 
 ## Author
 
