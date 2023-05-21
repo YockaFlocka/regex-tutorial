@@ -49,9 +49,20 @@ Curly braces are used to specify an exact amount of things to match. In this cas
 
 ### Character Classes
 
-### The OR Operator
+/^(`[a-z0-9_\.-]`+)`@`(`[\da-z\.-]`+)`\.`(`[a-z\.]`{2,6})$/
+
+Character Classes match a character in the input string to any one character set within it. In our regex above, we have 3 bracket expressions that house multiple Character Classes. We also have 2 Character Classes that are matched literally at the correct position in the input string ("@" and ".").
+
+- "a-z" is a lowercase character range
+- "0-9" is a digit character range
+- "\d" serves the same purpose as defining the previous digit range (0-9)
+- "_" and "-" match their respective characters literally
+- "\." matches a period literally
+- "@" and the external "\." match their respective characters literally at certain positions in the input string
 
 ### Flags
+
+
 
 ### Character Escapes
 
